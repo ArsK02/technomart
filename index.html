@@ -94,8 +94,10 @@
                     <a href="#" class="button promo-item-button">для стройки</a>
                 </article>
                 <article class="promo-slider">
+                    <h3 class="visually-hidden">Дрели</h3>
+                    <p class="visually-hidden">Соседям на радость!</p>
                     <div class="slides">
-                        <img src="img/bosch-top-img.png">
+                        <img src="img/bosch-top-img.png" alt="Каталог дрелей">
                     </div>
                 </article>
                 <div class="promo-container">
@@ -137,8 +139,7 @@
                     </li>
                     <li class="catalog-item">
                         <p class="catalog-item__image">
-                            <img src="img/bosch-bfg3000.png" alt="Перфоратор BOSCH BFG 3000" width="127px"
-                                height="112px">
+                            <img src="img/bosch-bfg3000.png" alt="Перфоратор BOSCH BFG 3000">
                         </p>
                         <h3>Перфоратор BOSCH BFG 3000</h3>
                         <p class="catalog-item__price">
@@ -158,8 +159,7 @@
                     </li>
                     <li class="catalog-item">
                         <p class="catalog-item__image">
-                            <img src="img/bosch-bfg6000.png" alt="Перфоратор BOSCH BFG 6000" width="114px"
-                                height="128px">
+                            <img src="img/bosch-bfg6000.png" alt="Перфоратор BOSCH BFG 6000">
                         </p>
                         <h3>Перфоратор BOSCH BFG 6000</h3>
                         <p class="catalog-item__price">
@@ -179,8 +179,7 @@
                     </li>
                     <li class="catalog-item new-item">
                         <p class="catalog-item__image">
-                            <img src="img/bosch-bfg2000.png" alt="Перфоратор BOSCH BFG 2000" width="127px"
-                                height="112px">
+                            <img src="img/bosch-bfg2000.png" alt="Перфоратор BOSCH BFG 2000">
                         </p>
                         <h3>Перфоратор BOSCH BFG 2000</h3>
                         <p class="catalog-item__price">
@@ -320,7 +319,10 @@
                         Вы можете забрать товар сами,<br>
                         заехав в наш офис:
                     </p>
-                    <img src="img/map.png">
+                    <a class="open-map" href="#">
+                        <img src="img/map.png"
+                            alt="Офис компании по адресу ул. Большая Конюшенная 19/8, Санкт-Перербург">
+                    </a>
                     <a href="#" class="button company-contacts_button">Заблудились? Напишите нам!</a>
                 </section>
             </div>
@@ -404,26 +406,38 @@
         </div>
     </footer>
     <section class="modal map-modal">
-        <img src="img/map-modal.png">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6037872533238!2d30.320858716447535!3d59.938716481876206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469631f6df7d3481%3A0xc0016be317f9a6fd!2sCat+Energy!5e0!3m2!1ses!2ses!4v1565725547309!5m2!1ses!2ses"
+            width="940" height="445" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <!--<img src="img/map-modal.png" alt="Офис компании по адресу ул. Большая Конюшенная 19/8, Санкт-Перербург">-->
+        <button class="modal-close" type="button">Закрыть</button>
     </section>
     <section class="modal write-us-modal">
         <form class="write-us-form" action="https://echo.htmlacademy.ru" method="POST">
-            <p>
-                <label for="user-name">Ваше имя:</label><br>
-                <input type="text" name="user-name" placeholder="Имя Фамилия" id="user-name">
-            </p>
-            <p>
-                <label for="user-email">Ваш e-mail:</label><br>
-                <input type="email" name="user-email" placeholder="email@example.com" id="user-email">
-            </p>
-            <p>
-                <label for="user-massage">Текст письма:</label><br>
-                <textarea name="user-massage" id="user-massage" placeholder="В свободной форме" rows="5"
-                    cols="89"></textarea>
-            </p>
-            <button class="button write-us-button" type="submit">Отправыть</button>
+            <div class="modal-info">
+                <p>
+                    <label for="user-name">Ваше имя:</label><br>
+                    <input type="text" name="user-name" id="user-name" placeholder="Представтесь, пожалуйста" required>
+                </p>
+                <p>
+                    <label for="user-email">Ваш e-mail:</label><br>
+                    <input type="email" name="user-email" id="user-email" placeholder="Для отправки ответа" required>
+                </p>
+                <p>
+                    <label for="user-massage">Текст письма:</label><br>
+                    <textarea name="user-massage" id="user-massage" rows="5" cols="50" placeholder="В свободной форме"
+                        required></textarea>
+                </p>
+            </div>
+            <div class="modal-submit">
+                <button class="button write-us-button" type="submit">Отправыть</button>
+            </div>
         </form>
+        <button class="modal-close" type="button">Закрыть</button>
     </section>
+
+    <script src="js/map.js"></script>
+    <script src="js/contact-form.js"></script>
 </body>
 
 </html>
