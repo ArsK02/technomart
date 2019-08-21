@@ -344,6 +344,8 @@ input:hover + .search-label  {
     line-height: 38px;
 
     background-color: #ee3643;
+    border-radius: 3px;
+    
     box-sizing: border-box;
 }
 .promo {
@@ -456,16 +458,113 @@ input:hover + .search-label  {
     background-position: -10px -10px;
 }
 .promo-slider {
+    position: relative;
+
     width: 620px;
     height: 266px;
 }
-.slides {
-    width: 100%;
-    height: 100%;
+.promo-slider input {
+    display: none;
 }
-.slides img {
+.promo-slide-1,
+.promo-slide-2 {
+    display: none;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    padding-top: 25px;
+    padding-left: 25px;
+
     width: 100%;
     height: 100%;
+
+    background-image: url(../img/slide-1.jpg);
+    background-repeat: no-repeat;
+
+    box-sizing: border-box;
+}
+.promo-slide-2 {
+    display: none;
+
+    background-image: url(../img/slide-2.jpg);
+    background-repeat: no-repeat;
+}
+.promo-slide-1 h3,
+.promo-slide-2 h3 {
+    margin-bottom: 10px;
+
+    font-size: 36px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+.promo-slide-1 p,
+.promo-slide-2 p {
+    margin-bottom: 120px;
+
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 18px;
+    color: #ffffff;
+}
+.promo-slider__button {
+    width: 195px;
+}
+.promo-slider__controls {
+    position: absolute;
+    left: 50%;
+    bottom: 35px;
+    
+    display: flex;
+    justify-content: space-between;
+    width: 30px;
+}
+.promo-slider__controls label {
+    width: 10px;
+    height: 10px;
+
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+
+    background-color: #ffffff;
+    
+    box-sizing: border-box;
+    cursor: pointer;
+    z-index: 1;
+}
+.promo-slider #btn-1:checked ~ .promo-slider__controls label:first-child {
+    background-color: #ee3643;
+}
+.promo-slider #btn-2:checked ~ .promo-slider__controls label:last-child {
+    background-color: #ee3643;
+}
+.promo-slider__arrow {
+    position: absolute;
+    display: block;
+
+    bottom: 110px;
+
+    width: 22px;
+    height: 40px;
+
+    z-index: 1;
+    cursor: pointer;
+}
+.arrow-left {
+    left: 25px;
+
+    background-image: url(../img/icon-left.svg);
+}
+.arrow-right {
+    right: 20px;
+
+    background-image: url(../img/icon-right.svg);
+}
+.promo-slider #btn-1:checked ~ .promo-slide-1 {
+    display: block;
+}
+.promo-slider #btn-2:checked ~ .promo-slide-2 {
+    display: block;
 }
 .popular-products__header {
     display: flex;
@@ -719,14 +818,11 @@ input:hover + .search-label  {
     font-family: "PT Sans","Arial",sans-serif;
 }
 .service-information {
-    position: relative;
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
-.service-navigation {
-    margin-right: 80px;
-}
-.service-navigation label {
+.service-nav label {
     display: block;
 
     width: 240px;
@@ -744,17 +840,18 @@ input:hover + .search-label  {
     background-color: #32425c;
 
     box-sizing: border-box;
+    cursor: pointer;
 }
-.service-navigation label:hover,
-.service-navigation label:focus {
+.service-nav label:hover,
+.service-nav label:focus {
     background-color: #293449;
 }
-.service-navigation input {
+.service-information input {
     display: none;
 }
-.service-navigation #button-1:checked ~ label[for="button-1"], 
-.service-navigation #button-2:checked ~ label[for="button-2"], 
-.service-navigation #button-3:checked ~ label[for="button-3"] {
+.service-information #button-1:checked ~ .service-nav label[for="button-1"], 
+.service-information #button-2:checked ~ .service-nav label[for="button-2"], 
+.service-information #button-3:checked ~ .service-nav label[for="button-3"] {
     color: #32425c;
     background-color: hsl(0, 0%, 100%);
     box-shadow: 0 1px 0 #ffffff;
@@ -771,7 +868,18 @@ input:hover + .search-label  {
 
     background: url(../img/shadow.png) no-repeat 0 0;
 }
+.service-slider {
+    position: relative;
+
+    width: 630px;
+    height: 280px;
+}
 .service-description {
+    display: none;
+
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 630px;
     height: 280px;
 }
@@ -781,15 +889,11 @@ input:hover + .search-label  {
     background-position: 100% 20px;
 }
 .service-description:nth-child(2) {
-    display: none;
-
     background-image: url(../img/slide-guarantee.png);
     background-repeat: no-repeat;
     background-position: 100% 0;
 }
 .service-description:nth-child(3) {
-    display: none;
-
     background-image: url(../img/slide-credit.png);
     background-repeat: no-repeat;
     background-position: 100% 0;
@@ -804,8 +908,6 @@ input:hover + .search-label  {
     text-transform: uppercase;
 }
 .service-description p {
-    display: block;
-
     font-family: "PT Sans","Arial",sans-serif;
 }
 .service-description:nth-child(1) p {
@@ -819,6 +921,15 @@ input:hover + .search-label  {
 }
 .service-description_button {
     width: 195px;
+}
+.service-information #button-1:checked ~ .service-slider .service-description:nth-child(1) {
+    display: block;
+}
+.service-information #button-2:checked ~ .service-slider .service-description:nth-child(2) {
+    display: block;
+}
+.service-information #button-3:checked ~ .service-slider .service-description:nth-child(3) {
+    display: block;
 }
 .company {
     display: flex;
@@ -897,12 +1008,15 @@ input:hover + .search-label  {
 .company-description_button:hover,
 .company-description_button:focus,
 .company-contacts_button:hover,
-.company-contacts_button:focus {
+.company-contacts_button:focus,
+.promo-slider__button:hover,
+.promo-slider__button:focus {
     background-color: #ca2c37;
 }
 .popular-products__header-button:active,
 .company-description_button:active,
-.company-contacts_button:active {
+.company-contacts_button:active,
+.promo-slider__button:active {
     background-color: #ba2732;
 }
 
@@ -1172,6 +1286,7 @@ form fieldset {
     background-color: #ffffff;
     border: 1px solid #e5e5e5;
     border-radius: 5px;
+    cursor: pointer;
 }
 .catalog {
     width: 700px;

@@ -94,11 +94,24 @@
                     <a href="#" class="button promo-item-button">для стройки</a>
                 </article>
                 <article class="promo-slider">
-                    <h3 class="visually-hidden">Дрели</h3>
-                    <p class="visually-hidden">Соседям на радость!</p>
-                    <div class="slides">
-                        <img src="img/bosch-top-img.png" alt="Каталог дрелей">
+                    <input type="radio" id="btn-1" name="toggle" checked>
+                    <input type="radio" id="btn-2" name="toggle">
+                    <label class="promo-slider__arrow arrow-left" for="btn-1"></label>
+                    <label class="promo-slider__arrow arrow-right" for="btn-2"></label>
+                    <div class="promo-slider__controls">
+                        <label for="btn-1"></label>
+                        <label for="btn-2"></label>
                     </div>
+                    <section class="promo-slide-1">
+                        <h3>Перфораторы</h3>
+                        <p>Настоящие мужские игрушки</p>
+                        <a href="catalog.html" class="button promo-slider__button">Открыть каталог</a>
+                    </section>
+                    <section class="promo-slide-2">
+                        <h3>Дрели</h3>
+                        <p>Соседям на радость!</p>
+                        <a href="catalog.html" class="button promo-slider__button">Открыть каталог</a>
+                    </section>
                 </article>
                 <div class="promo-container">
                     <article class="promo-item sale">
@@ -254,10 +267,10 @@
                 <p>Хороший интернет-магазин отличается от плохого не только ценами!<br>
                     Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</p>
                 <div class="service-information">
-                    <div class="service-navigation">
-                        <input type="radio" name="navigation" id="button-1" checked>
-                        <input type="radio" name="navigation" id="button-2">
-                        <input type="radio" name="navigation" id="button-3">
+                    <input type="radio" name="navigation" id="button-1" checked>
+                    <input type="radio" name="navigation" id="button-2">
+                    <input type="radio" name="navigation" id="button-3">
+                    <div class="service-nav">
                         <label for="button-1">Доставка</label>
                         <label for="button-2">Гарантия</label>
                         <label for="button-3">Кредит</label>
